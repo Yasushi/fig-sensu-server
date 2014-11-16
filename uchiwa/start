@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -e /config/config.json.template ]; then
+    env | grep -e '_TCP_ADDR=' -e '_TCP_PORT=' \
+	| sed -e 's/^\(.*\)=\(.*\)$/ -e "s!\1!\2!g"/' | tr '\n' ' ' \
+	| sed -e 's/^/sed/' -e 's!$! /config/config.json.template!' \
+	| sh - > /config/config.json
+fi
+
+/go/bin/app -c /config/config.json

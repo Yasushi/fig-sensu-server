@@ -1,0 +1,8 @@
+/ssl_certs.tar
+/ssl_certs/
+/rabbitmq/cacert.pem
+/rabbitmq/server_cert.pem
+/rabbitmq/server_key.pem
+/sensu/client_cert.pem
+/sensu/client_key.pem
+/log/
